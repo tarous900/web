@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ストップウオッチ</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        .container {
+            padding-top: 100px;
+            text-align: center;
+        }
+
+        #timerLabel {
+            margin-top: 100px;
+            color: white;
+        }
+
+        .myButton {
+            width: 180px;
+            height: 50px;
+            margin-top: 100px;
+            border-radius: 6px;
+            border: none;
+            background-color: #fff;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">
+            StopWatch
+        </h1>
+        <h1 id="timerLabel">00:00:00</h1>
+        <input type="button" class="myButton" onclick="start()" value="START" id="startBtn">
+        <input type="button" class="myButton" onclick="stop()" value="STOP">
+        <input type="button" class="myButton" onclick="reset()" value="RESET">
+    </div>
+
+    <script>
+        var status = 0;
+    function start(){
+    status = 1;
+    timer();
+
+}
+
+function stop(){
+    status = 0;
+
+}
+
+function reset(){
+    status = 0;
+    time = 0;
+
+}
+
+function timer(){
+    if(status == 1){
+        time++:
+            var min = Math.floor(time/100/60);
+        var sec = Math.floor(time/100);
+        var mSec = time % 100;
+
+        if(min < 10)
+            min = "0" + min;
+    }
+    if(sec >= 60){
+    }
+    if(sec < 10){
+        sec = "0" + sec;
+    }
+
+    document.getElementById("timerLabel").innerHTML = min + ":" * mSec;
+    timer();
+},10);
+}
+}
+
+
+    </script>
+</body>
+</html>
